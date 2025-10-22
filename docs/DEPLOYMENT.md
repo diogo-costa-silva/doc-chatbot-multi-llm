@@ -82,13 +82,13 @@ You need to add 3 secrets to your GitHub repository:
 4. Add these three secrets:
    - **Name**: `HF_TOKEN` | **Value**: Your Hugging Face token from Step 2
    - **Name**: `HF_USERNAME` | **Value**: Your Hugging Face username
-   - **Name**: `HF_SPACE_NAME` | **Value**: The space name (e.g., `genai-doc-chatbot`)
+   - **Name**: `HF_SPACE_NAME` | **Value**: The space name (e.g., `doc-chatbot-multi-llm`)
 
 #### Option B: Via GitHub CLI (Recommended)
 
 ```bash
 # Navigate to your project directory
-cd /path/to/genai-doc-chatbot
+cd /path/to/doc-chatbot-multi-llm
 
 # Set HF_TOKEN
 gh secret set HF_TOKEN
@@ -98,7 +98,7 @@ gh secret set HF_TOKEN
 gh secret set HF_USERNAME -b "your-huggingface-username"
 
 # Set HF_SPACE_NAME
-gh secret set HF_SPACE_NAME -b "genai-doc-chatbot"
+gh secret set HF_SPACE_NAME -b "doc-chatbot-multi-llm"
 
 # Verify secrets were created
 gh secret list
@@ -115,7 +115,7 @@ git add .
 git commit -m "Initial commit: Multi-LLM Document Chatbot"
 
 # Add remote and push
-git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/genai-doc-chatbot.git
+git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/doc-chatbot-multi-llm.git
 git branch -M main
 git push -u origin main
 ```
@@ -126,7 +126,7 @@ The GitHub Actions workflow will automatically trigger and deploy to Hugging Fac
 
 After the first deployment completes (~2-5 minutes):
 
-1. Go to your Space: `https://huggingface.co/spaces/<YOUR_HF_USERNAME>/genai-doc-chatbot`
+1. Go to your Space: `https://huggingface.co/spaces/<YOUR_HF_USERNAME>/doc-chatbot-multi-llm`
 2. Navigate to **Settings** → **Repository secrets**
 3. Add your API keys:
    - **Name**: `GEMINI_API_KEY` | **Value**: Your Gemini key
@@ -136,7 +136,7 @@ After the first deployment completes (~2-5 minutes):
 
 ### Step 6: Test Your Deployment
 
-1. Open your Space URL: `https://huggingface.co/spaces/<YOUR_HF_USERNAME>/genai-doc-chatbot`
+1. Open your Space URL: `https://huggingface.co/spaces/<YOUR_HF_USERNAME>/doc-chatbot-multi-llm`
 2. Wait for the build to complete (~2-5 minutes on first run)
 3. Test the application:
    - Configure an LLM (Gemini or Groq)
@@ -159,7 +159,7 @@ git commit -m "Add new feature: XYZ"
 git push
 
 # 3. Automatic deployment! 🎉
-# Check progress at: github.com/<YOUR_GITHUB_USERNAME>/genai-doc-chatbot/actions
+# Check progress at: github.com/<YOUR_GITHUB_USERNAME>/doc-chatbot-multi-llm/actions
 ```
 
 That's it! Every push to the `main` branch triggers an automatic deployment to Hugging Face.

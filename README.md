@@ -162,7 +162,8 @@ genai-doc-chatbot/
 │   └── workflows/
 │       └── deploy-to-huggingface.yml  # Auto-deployment workflow
 ├── .streamlit/
-│   └── config.toml               # Streamlit configuration
+│   ├── config.toml               # Streamlit configuration
+│   └── secrets.toml.example      # API keys template for Streamlit Cloud
 ├── pyproject.toml                # UV project configuration
 ├── requirements.txt              # Python dependencies
 ├── .env.example                  # Environment variables template
@@ -173,9 +174,40 @@ genai-doc-chatbot/
 
 ## 🌐 Deployment
 
-### Hugging Face Spaces (Recommended)
+### Streamlit Community Cloud (Recommended)
 
-This project uses **automatic deployment** from GitHub to Hugging Face Spaces:
+The **easiest way** to deploy this project:
+
+**Quick Deploy (3 steps):**
+
+1. **Sign in to Streamlit Cloud**
+   - Go to [share.streamlit.io](https://share.streamlit.io/)
+   - Sign in with your GitHub account
+
+2. **Create New App**
+   - Click "New app"
+   - Select your repository and branch (`main`)
+   - Main file path: `streamlit_app.py`
+   - Click "Deploy"
+
+3. **Configure API Keys**
+   - In your app's dashboard, go to "⚙️ Settings" → "Secrets"
+   - Paste the following (replace with your actual keys):
+
+```toml
+GEMINI_API_KEY = "your_gemini_api_key_here"
+GROQ_API_KEY = "your_groq_api_key_here"
+```
+
+**That's it!** Your app will be live at `https://<your-app-name>.streamlit.app`
+
+> 💡 **Tip**: Use `.streamlit/secrets.toml.example` as a template for your secrets.
+
+---
+
+### Hugging Face Spaces (Alternative)
+
+This project also supports **automatic deployment** to Hugging Face Spaces:
 
 **One-time setup:**
 1. Create a Space on Hugging Face
@@ -184,10 +216,13 @@ This project uses **automatic deployment** from GitHub to Hugging Face Spaces:
 
 See **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)** for detailed instructions.
 
-### Alternative Platforms
+---
 
-- **Streamlit Community Cloud**: Connect directly to GitHub
+### Other Platforms
+
 - **Railway / Render**: Requires Docker configuration
+- **Google Cloud Run**: Requires containerization
+- **AWS / Azure**: Requires cloud platform setup
 
 ---
 
