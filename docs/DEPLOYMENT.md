@@ -51,7 +51,7 @@ Before starting, ensure you have:
 
 1. Go to [huggingface.co/new-space](https://huggingface.co/new-space)
 2. Fill in the details:
-   - **Space name**: `genai-doc-chatbot` (or your preferred name)
+   - **Space name**: `doc-chatbot-multi-llm` (or your preferred name)
    - **License**: MIT
    - **SDK**: **Streamlit**
    - **Hardware**: **CPU basic** (free tier)
