@@ -1,0 +1,40 @@
+# ============================================
+# Multi-LLM Document Chatbot - Requirements
+# ============================================
+# This file defines Python package dependencies for Hugging Face Spaces deployment
+# For local development with UV, see pyproject.toml
+
+# Web Framework
+streamlit>=1.40.0           # Web UI framework
+
+# Environment Configuration
+python-dotenv>=1.0.0        # .env file support for API keys
+
+# LLM Providers
+google-generativeai>=0.8.0  # Google Gemini API client
+groq>=0.11.0                # Groq API client (fast inference)
+
+# Document Processing
+pypdf>=5.1.0                # Pure Python PDF text extraction
+
+# LangChain Components (for text processing)
+langchain>=0.3.0            # Core LangChain framework
+langchain-community>=0.3.0  # Community integrations
+langchain-text-splitters>=0.3.0  # Recursive text chunking
+
+# Utilities
+watchdog>=6.0.0             # File system monitoring (Streamlit auto-reload)
+
+# ============================================
+# Notes:
+#
+# Multi-LLM Dependency Strategy:
+# - pyproject.toml: Includes ALL LLMs (Gemini, Groq, Ollama) for local development
+#   → Run `uv sync` for full multi-LLM support with offline capabilities
+#
+# - requirements.txt (this file): Cloud-only LLMs (Gemini, Groq) for HF Spaces
+#   → Ollama excluded: not available on cloud platforms, requires local installation
+#   → Platform detection automatically disables Ollama UI on HF Spaces
+#
+# - All packages are pure Python - no system dependencies needed (see packages.txt)
+# ============================================
