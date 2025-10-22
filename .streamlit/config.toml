@@ -10,7 +10,10 @@ font = "sans serif"
 [server]
 headless = true
 enableCORS = false
-port = 7860
+# Port is automatically set by the platform:
+# - Streamlit Cloud: 8501 (default)
+# - Hugging Face Spaces: 7860 (via environment variables)
+# - Local: 8501 (default)
 
 [browser]
 gatherUsageStats = false
